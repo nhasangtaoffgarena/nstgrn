@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fire Creator Official Hub VIP 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;700&family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Teko', 'sans-serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        'ff-orange': '#ff7000',
+                        'ff-dark': '#0b0f19',
+                        'ff-card': '#131b2e',
+                        'ff-border': '#1f293d'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #07090e;
+            color: #f3f4f6;
+        }
+        .ff-gradient-text {
+            background: linear-gradient(135deg, #ff7000 0%, #ffb703 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .ff-glass {
+            background: rgba(19, 27, 46, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .ff-btn-primary {
+            background: linear-gradient(135deg, #ffb703 0%, #ff7000 100%);
+            color: #000;
+            font-weight: 800;
+            transition: all 0.3s ease;
+        }
+        .ff-btn-primary:hover {
+            filter: brightness(1.15);
+            box-shadow: 0 0 20px rgba(255, 112, 0, 0.4);
+        }
+        .slanted-banner {
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+        }
+        .rank-box-silver {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+            border: 2px solid #64748b;
+        }
+        .rank-box-blue {
+            background: linear-gradient(135deg, rgba(14, 116, 144, 0.25) 0%, rgba(15, 23, 42, 0.9) 100%);
+            border: 2px solid #00b4d8;
+        }
+        .rank-box-gold {
+            background: linear-gradient(135deg, rgba(217, 119, 6, 0.25) 0%, rgba(15, 23, 42, 0.9) 100%);
+            border: 2px solid #f59e0b;
+        }
+        .bxh-row {
+            background: rgba(19, 27, 46, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1rem;
+            transition: all 0.2s;
+        }
+        .bxh-row:hover {
+            background: rgba(255, 112, 0, 0.1);
+            border-color: rgba(255, 112, 0, 0.4);
+        }
+        .bxh-rank-badge {
+            background: linear-gradient(135deg, #ffb703 0%, #f77f00 100%);
+            clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
+        }
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(1.05); }
+        }
+        .animate-glow {
+            animation: pulseGlow 4s infinite ease-in-out;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #07090e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ff7000;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-orange-500 selection:text-black">
+
+    <header class="sticky top-0 z-50 bg-black/95 border-b border-ff-border backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3 cursor-pointer select-none group" ondblclick="accessAdminPanel()" title="Nhấp đúp 2 lần để vào khu vực quản trị viên">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-orange-600 to-amber-400 flex items-center justify-center text-black font-extrabold text-2xl shadow-lg shadow-orange-500/40 group-hover:scale-105 transition-transform" onclick="switchTab('home')">
+                    <i class="fa-solid fa-fire"></i>
+                </div>
+                <div onclick="switchTab('home')">
+                    <span class="font-heading text-3xl font-bold uppercase tracking-wider text-white">FREE FIRE</span>
+                    <span class="text-xs block text-amber-500 uppercase font-extrabold tracking-widest -mt-2">VIP CREATOR HUB 2026</span>
+                </div>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-1.5 bg-ff-card p-1.5 rounded-xl border border-ff-border">
+                <button onclick="switchTab('home')" id="nav-home" class="px-3.5 py-2.5 rounded-lg text-xs font-semibold transition-all text-amber-400 bg-orange-500/10">
+                    <i class="fa-solid fa-house mr-1.5"></i>TRANG CHỦ
+                </button>
+                <button onclick="switchTab('apply')" id="nav-apply" class="px-3.5 py-2.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition-all">
+                    <i class="fa-solid fa-paper-plane mr-1.5"></i>GỬI HỒ SƠ
+                </button>
+                <button onclick="switchTab('submitclip')" id="nav-submitclip" class="px-3.5 py-2.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition-all">
+                    <i class="fa-solid fa-video mr-1.5"></i>NỘP CLIP
+                </button>
+                <button onclick="switchTab('lookup')" id="nav-lookup" class="px-3.5 py-2.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition-all">
+                    <i class="fa-solid fa-magnifying-glass mr-1.5"></i>TRA CỨU
+                </button>
+                <button onclick="switchTab('bxh')" id="nav-bxh" class="px-3.5 py-2.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition-all">
+                    <i class="fa-solid fa-trophy mr-1.5"></i>BXH
+                </button>
+                <button onclick="switchTab('giftcode')" id="nav-giftcode" class="px-3.5 py-2.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition-all">
+                    <i class="fa-solid fa-gift mr-1.5"></i>NHẬN CODE
+                </button>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <div id="userAccountSection">
+                    <button onclick="openLoginModal()" class="ff-btn-primary px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+                        <i class="fa-solid fa-user-circle"></i> ĐĂNG NHẬP
+                    </button>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="lg:hidden w-11 h-11 bg-ff-card border border-ff-border rounded-xl text-amber-400 flex items-center justify-center text-lg shadow-md">
+                    <i id="mobileMenuIcon" class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobileDropdownMenu" class="hidden lg:hidden bg-ff-dark border-b border-ff-border px-4 py-4 space-y-2">
+            <button onclick="switchTab('home'); toggleMobileMenu();" class="w-full text-left px-4 py-3 rounded-xl text-xs font-bold uppercase text-white hover:bg-orange-500/20 flex items-center gap-3">
+                <i class="fa-solid fa-house text-amber-400 w-5"></i> Trang Chủ
+            </button>
+            <button onclick="switchTab('apply'); toggleMobileMenu();" class="w-full text-left px-4 py-3 rounded-xl text-xs font-bold uppercase text-white hover:bg-orange-500/20 flex items-center gap-3">
+                <i class="fa-solid fa-paper-plane text-amber-400 w-5"></i> Gửi Hồ Sơ
+            </button>
+            <button onclick="switchTab('submitclip'); toggleMobileMenu();" class="w-full text-left px-4 py-3 rounded-xl text-xs font-bold uppercase text-white hover:bg-orange-500/20 flex items-center gap-3">
+                <i class="fa-solid fa-video text-amber-400 w-5"></i> Nộp Link Clip
+            </button>
+            <button onclick="switchTab('lookup'); toggleMobileMenu();" class="w-full text-left px-4 py-3 rounded-xl text-xs font-bold uppercase text-white hover:bg-orange-500/20 flex items-center gap-3">
+                <i class="fa-solid fa-magnifying-glass text-amber-400 w-5"></i> Tra Cứu Hồ Sơ
+            </button>
+            <button onclick="switchTab('bxh'); toggleMobileMenu();" class="w-full text-left px-4 py-3 rounded-xl text-xs font-bold uppercase text-white hover:bg-orange-500/20 flex items-center gap-3">
+                <i class="fa-solid fa-trophy text-amber-400 w-5"></i> Bảng Xếp Hạng (BXH)
+            </button>
+            <button onclick="switchTab('giftcode'); toggleMobileMenu();" class="w-full text-left px-4 py-3 rounded-xl text-xs font-bold uppercase text-white hover:bg-orange-500/20 flex items-center gap-3">
+                <i class="fa-solid fa-gift text-amber-400 w-5"></i> Nhận Giftcode VIP
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16">
+        
+        <!-- HOME TAB -->
+        <div id="tab-home" class="space-y-16">
+            <div class="relative rounded-3xl overflow-hidden ff-glass p-8 sm:p-14 border border-orange-500/30 shadow-2xl">
+                <div class="absolute -right-20 -top-20 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl pointer-events-none animate-glow"></div>
+                <div class="absolute -left-20 -bottom-20 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl pointer-events-none animate-glow"></div>
+                
+                <div class="relative z-10 max-w-3xl space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/15 border border-orange-500/40 text-amber-400 text-xs font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-crown text-amber-400"></i> Chương Trình Đối Tác & Nhà Sáng Tạo Garena Free Fire 2026
+                    </div>
+                    <h1 class="font-heading text-5xl sm:text-7xl font-bold uppercase tracking-wide leading-none text-white">
+                        CHINH PHỤC ĐỈNH CAO CÙNG <span class="ff-gradient-text">V-BADGE</span> DANH GIÁ
+                    </h1>
+                    <p class="text-gray-300 text-base sm:text-lg leading-relaxed">
+                        Tham gia hệ thống Creator cao cấp để nhận đặc quyền thử nghiệm trang phục VIP sớm nhất, nhận kim cương hàng tuần, lương cứng hấp dẫn và vinh danh trên bảng xếp hạng nhà sáng tạo toàn quốc.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <button onclick="switchTab('apply')" class="ff-btn-primary px-8 py-4 rounded-2xl text-black font-extrabold uppercase tracking-wider flex items-center gap-2 shadow-xl shadow-orange-500/25">
+                            <i class="fa-solid fa-paper-plane"></i> ĐĂNG KÝ CREATOR NGAY
+                        </button>
+                        <button onclick="switchTab('bxh')" class="px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white font-bold transition-all shadow-lg flex items-center gap-2">
+                            <i class="fa-solid fa-trophy"></i> XEM BẢNG XẾP HẠNG (BXH)
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OFFICIAL RANK SECTION -->
+            <div class="space-y-8">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <span class="text-amber-500 text-xs font-bold uppercase tracking-widest">Hệ thống phân hạng creator</span>
+                    <h2 class="font-heading text-4xl sm:text-5xl font-bold uppercase text-white">3 CẤP ĐỘ ĐỐI TÁC CHÍNH THỨC</h2>
+                    <p class="text-gray-400 text-sm">Lựa chọn cấp bậc tương ứng với quy mô kênh của bạn để nhận đãi ngộ tối đa từ Garena.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- NEW CREATOR -->
+                    <div class="rank-box-silver rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden transition-transform hover:scale-[1.02]">
+                        <div class="absolute top-0 right-0 slanted-banner bg-gray-400 px-6 py-1 text-black font-extrabold text-xs uppercase tracking-wider">
+                            Cấp 1
+                        </div>
+                        <div class="space-y-6">
+                            <div class="w-28 h-28 mx-auto flex items-center justify-center bg-gray-950/90 rounded-2xl border-2 border-gray-400 shadow-inner relative">
+                                <svg class="w-22 h-22 text-gray-200" viewBox="0 0 100 100" fill="currentColor">
+                                    <path d="M50 10 L85 25 L85 65 L50 90 L15 65 L15 25 Z" fill="#2c323f" stroke="#8e9aaf" stroke-width="4"/>
+                                    <text x="50" y="58" font-size="28" font-weight="900" font-family="Teko" text-anchor="middle" fill="#ffffff" letter-spacing="2">V</text>
+                                </svg>
+                            </div>
+                            <h3 class="font-heading text-3xl font-bold text-center text-gray-200 uppercase">NEW CREATOR</h3>
+                            <div class="space-y-4 text-xs text-gray-300 border-t border-gray-700/50 pt-4">
+                                <div>
+                                    <p class="font-bold text-amber-400 uppercase tracking-wide mb-1">A. QUYỀN LỢI</p>
+                                    <ul class="space-y-1.5 pl-1">
+                                        <li>- Nhận thẻ thử 1 - 7 ngày trải nghiệm vật phẩm hot trong tháng ngay khi vật phẩm vừa mở bán (Skin Súng Mới, Trang Phục, Skin Mới).</li>
+                                        <li>- Có cơ hội để lên các mức rank cao hơn và nhận các quyền lợi hấp dẫn hơn.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-amber-400 uppercase tracking-wide mb-1">B. ĐIỀU KIỆN ĐĂNG KÝ</p>
+                                    <ul class="space-y-1.5 pl-1">
+                                        <li>- Kênh đăng ký có ít nhất 1000 lượt theo dõi.</li>
+                                        <li>- Trên kênh có đăng tải nội dung về Free Fire.</li>
+                                        <li>- Nội dung của kênh phù hợp với định hướng về mặt nội dung của chương trình, không vi phạm các quy chuẩn của nền tảng, nhà phát hành và nhà nước nói chung.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-amber-400 uppercase tracking-wide mb-1">C. NGHĨA VỤ CREATOR</p>
+                                    <ul class="space-y-1.5 pl-1">
+                                        <li>- Số video tối thiểu/tháng: 8 videos/tháng.</li>
+                                        <li>- Nhiệm vụ tham gia tối thiểu: Hoàn thành 4 nhiệm vụ/tháng.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-amber-400 uppercase tracking-wide mb-1">D. LƯU Ý</p>
+                                    <ul class="space-y-1.5 pl-1 text-gray-400">
+                                        <li>- Không phải đủ 1000 người theo dõi là được vào chương trình.</li>
+                                        <li>- Nội dung kênh của bạn phải có yếu tố cá nhân hoặc nội dung kịch bản rõ ràng.</li>
+                                        <li>- Tuyệt đối không có các hành động làm xấu hình ảnh tựa game Garena Free Fire.</li>
+                                        <li>- Quyết định từ Ban Tổ Chức là quyết định cuối cùng.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="switchTab('apply')" class="mt-8 w-full py-3 bg-gray-800 hover:bg-gray-700 border border-gray-600 rounded-xl font-bold text-xs uppercase tracking-widest text-white transition-all shadow-md">
+                            ĐĂNG KÝ NEW CREATOR <i class="fa-solid fa-chevron-right ml-1"></i>
+                        </button>
+                    </div>
+
+                    <!-- CREATOR -->
+                    <div class="rank-box-blue rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden transition-transform hover:scale-[1.02]">
+                        <div class="absolute top-0 right-0 slanted-banner bg-cyan-400 px-6 py-1 text-black font-extrabold text-xs uppercase tracking-wider">
+                            Cấp 2
+                        </div>
+                        <div class="space-y-6">
+                            <div class="w-28 h-28 mx-auto flex items-center justify-center bg-gray-950/90 rounded-2xl border-2 border-cyan-400 shadow-inner relative">
+                                <svg class="w-22 h-22 text-cyan-300" viewBox="0 0 100 100" fill="currentColor">
+                                    <path d="M50 10 L85 25 L85 65 L50 90 L15 65 L15 25 Z" fill="#042038" stroke="#00b4d8" stroke-width="4"/>
+                                    <text x="50" y="58" font-size="28" font-weight="900" font-family="Teko" text-anchor="middle" fill="#00b4d8" letter-spacing="2">V</text>
+                                </svg>
+                            </div>
+                            <h3 class="font-heading text-3xl font-bold text-center text-cyan-400 uppercase">CREATOR</h3>
+                            <div class="space-y-4 text-xs text-cyan-100 border-t border-cyan-900/60 pt-4">
+                                <div>
+                                    <p class="font-bold text-cyan-300 uppercase tracking-wide mb-1">A. QUYỀN LỢI</p>
+                                    <ul class="space-y-1.5 pl-1">
+                                        <li>- Nhận thẻ thử 1 - 7 ngày trải nghiệm vật phẩm hot trong tháng ngay khi vật phẩm vừa mở bán.</li>
+                                        <li>- Cơ hội thăng hạng Partner và nhận kim cương thưởng hàng tháng.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-cyan-300 uppercase tracking-wide mb-1">B. ĐIỀU KIỆN ĐĂNG KÝ</p>
+                                    <ul class="space-y-1.5 pl-1">
+                                        <li>- Kênh đăng ký có ít nhất 10,000 lượt theo dõi.</li>
+                                        <li>- Trên kênh có đăng tải nội dung về Free Fire chuyên nghiệp.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-cyan-300 uppercase tracking-wide mb-1">C. NGHĨA VỤ CREATOR</p>
+                                    <ul class="space-y-1.5 pl-1">
+                                        <li>- Số video tối thiểu/tháng: 10 videos/tháng.</li>
+                                        <li>- Nhiệm vụ tham gia tối thiểu: Hoàn thành 6 nhiệm vụ/tháng.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="switchTab('apply')" class="mt-8 w-full py-3 bg-cyan-600 hover:bg-cyan-500 rounded-xl font-bold text-xs uppercase tracking-widest text-black transition-all shadow-lg">
+                            ĐĂNG KÝ CREATOR <i class="fa-solid fa-chevron-right ml-1"></i>
+                        </button>
+                    </div>
+
+                    <!-- PARTNER -->
+                    <div class="rank-box-gold rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden transition-transform hover:scale-[1.02]">
+                        <div class="absolute top-0 right-0 slanted-banner bg-amber-400 px-6 py-1 text-black font-extrabold text-xs uppercase tracking-wider">
+                            Cấp 3 - VIP
+                        </div>
+                        <div class="space-y-6">
+                            <div class="w-28 h-28 mx-auto flex items-center justify-center bg-gray-950/90 rounded-2xl border-2 border-amber-400 shadow-inner relative">
+                                <svg class="w-22 h-22 text-amber-300" viewBox="0 0 100 100" fill="currentColor">
+                                    <path d="M50 10 L85 25 L85 65 L50 90 L15 65 L15 25 Z" fill="#3a1e00" stroke="#ffb703" stroke-width="4"/>
+                                    <text x="50" y="58" font-size="28" font-weight="900" font-family="Teko" text-anchor="middle" fill="#ffb703" letter-spacing="2">V</text>
+                                </svg>
+                            </div>
+                            <h3 class="font-heading text-3xl font-bold text-center text-amber-400 uppercase">PARTNER</h3>
+                            <div class="space-y-4 text-xs text-amber-100 border-t border-amber-900/60 pt-4">
+                                <div>
+                                    <p class="font-bold text-amber-300 uppercase tracking-wide mb-1">A. QUYỀN LỢI</p>
+                                    <ul class="space-y-1.5 pl-1">
+                                        <li>- Nhận huy hiệu V-Badge độc quyền hiển thị trong game và các đặc quyền tối cao.</li>
+                                        <li>- Ký hợp đồng độc quyền, nhận lương cứng hàng tháng & tài trợ từ Garena.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-amber-300 uppercase tracking-wide mb-1">B. ĐIỀU KIỆN ĐĂNG KÝ</p>
+                                    <ul class="space-y-1.5 pl-1">
+                                        <li>- Kênh đăng ký có ít nhất 50,000 lượt theo dõi.</li>
+                                        <li>- Tương tác siêu khủng, lượng view ổn định hàng tháng.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-amber-300 uppercase tracking-wide mb-1">C. NGHĨA VỤ CREATOR</p>
+                                    <ul class="space-y-1.5 pl-1">
+                                        <li>- Hoàn thành chỉ tiêu KPI cam kết riêng theo hợp đồng đối tác.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="switchTab('apply')" class="mt-8 w-full py-3 ff-btn-primary rounded-xl font-extrabold text-xs uppercase tracking-widest text-black transition-all shadow-lg">
+                            ĐĂNG KÝ PARTNER <i class="fa-solid fa-chevron-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SUBMIT CLIP TAB -->
+        <div id="tab-submitclip" class="hidden max-w-3xl mx-auto space-y-8">
+            <div class="ff-glass p-8 sm:p-10 rounded-3xl border border-orange-500/40 shadow-2xl space-y-8">
+                <div class="relative rounded-2xl overflow-hidden bg-gradient-to-r from-orange-600/30 via-amber-500/20 to-orange-600/30 p-8 border border-orange-500/40 text-center space-y-3">
+                    <h3 class="font-heading text-3xl sm:text-4xl font-extrabold uppercase text-amber-400 tracking-wider">
+                        HÃY GẮN HASHTAG <br><span class="text-white text-4xl sm:text-5xl">#NHASANGTAOFREEFIRE</span> TRONG LÚC CHỜ ĐỢI NHÉ!
+                    </h3>
+                    <p class="text-gray-300 text-xs sm:text-sm">Làm video và gắn hashtag #NhaSangTaoFreeFire sau đó nộp link bên dưới.</p>
+                </div>
+
+                <form onsubmit="handleClipSubmission(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-300 mb-1.5">UID Free Fire</label>
+                            <input type="text" id="clipUid" required class="w-full bg-ff-dark border border-ff-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500" placeholder="Nhập UID của bạn...">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-300 mb-1.5">Nền Tảng Đăng Tải</label>
+                            <select id="clipPlatform" class="w-full bg-ff-dark border border-ff-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500">
+                                <option value="TikTok">TikTok</option>
+                                <option value="YouTube">YouTube Shorts</option>
+                                <option value="Facebook">Facebook Reels</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-300 mb-1.5">Đường Dẫn Clip (URL Video)</label>
+                        <input type="url" id="clipUrl" required class="w-full bg-ff-dark border border-ff-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500" placeholder="https://tiktok.com/@user/video/...">
+                    </div>
+
+                    <button type="submit" class="w-full py-4 ff-btn-primary rounded-xl text-black font-extrabold uppercase tracking-widest text-sm shadow-xl shadow-orange-500/30">
+                        <i class="fa-solid fa-cloud-arrow-up mr-2"></i> NỘP LINK CLIP NGAY
+                    </button>
+                </form>
+
+                <div class="bg-black/60 p-6 rounded-2xl border border-ff-border space-y-4 text-xs text-gray-300">
+                    <div class="flex items-center gap-2 text-amber-400 font-bold uppercase text-sm border-b border-gray-800 pb-3">
+                        <i class="fa-solid fa-clock"></i> THỜI GIAN CẦN LƯU Ý
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between"><span class="text-gray-400">Bắt đầu Đánh giá:</span> <strong class="text-white">16:09 | Thứ Tư, ngày 29.07.2026</strong></li>
+                        <li class="flex justify-between"><span class="text-gray-400">Kết thúc Đánh giá:</span> <strong class="text-white">16:09 | Thứ Tư, ngày 19.08.2026</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- BXH TAB -->
+        <div id="tab-bxh" class="hidden max-w-4xl mx-auto space-y-12">
+            <div class="text-center space-y-3">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/40 text-amber-400 text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-trophy text-amber-400"></i> Bảng Xếp Hạng Creator Cấp Quốc Gia
+                </div>
+                <h2 class="font-heading text-5xl font-bold uppercase text-white">BẢNG XẾP HẠNG TỔNG VIEW (BXH)</h2>
+            </div>
+
+            <!-- TIKTOK -->
+            <div class="ff-glass p-6 sm:p-8 rounded-3xl border border-amber-500/30 shadow-xl space-y-6">
+                <div class="flex items-center gap-3 border-b border-gray-800 pb-4">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-pink-600 to-amber-500 flex items-center justify-center text-white font-bold text-lg">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <h3 class="font-heading text-3xl font-bold uppercase text-amber-400 tracking-wide m-0">TIKTOK</h3>
+                </div>
+                <div class="space-y-3">
+                    <div class="bxh-row p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bxh-rank-badge flex items-center justify-center text-black font-heading font-bold text-2xl shadow-md">1</div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Hiếu đầu đá</h4>
+                                <span class="text-xs text-amber-400 font-bold uppercase">TIKTOK</span>
+                            </div>
+                        </div>
+                        <div class="text-left sm:text-right">
+                            <span class="text-xs text-gray-400 block">TỔNG VIEW</span>
+                            <span class="text-xl font-heading font-bold text-amber-400">50,317,718</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- YOUTUBE -->
+            <div class="ff-glass p-6 sm:p-8 rounded-3xl border border-orange-500/30 shadow-xl space-y-6">
+                <div class="flex items-center gap-3 border-b border-gray-800 pb-4">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-red-600 to-amber-500 flex items-center justify-center text-white font-bold text-lg">
+                        <i class="fa-brands fa-youtube"></i>
+                    </div>
+                    <h3 class="font-heading text-3xl font-bold uppercase text-orange-400 tracking-wide m-0">YOUTUBE</h3>
+                </div>
+                <div class="space-y-3">
+                    <div class="bxh-row p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bxh-rank-badge flex items-center justify-center text-black font-heading font-bold text-2xl shadow-md">1</div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Bé Là Shima</h4>
+                                <span class="text-xs text-orange-400 font-bold uppercase">YOUTUBE</span>
+                            </div>
+                        </div>
+                        <div class="text-left sm:text-right">
+                            <span class="text-xs text-gray-400 block">TỔNG VIEW</span>
+                            <span class="text-xl font-heading font-bold text-orange-400">54,750,137</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- APPLY TAB -->
+        <div id="tab-apply" class="hidden max-w-2xl mx-auto space-y-6">
+            <div class="ff-glass p-8 sm:p-10 rounded-3xl border border-orange-500/30 shadow-2xl">
+                <div class="text-center mb-8">
+                    <span class="text-amber-500 text-xs font-bold uppercase tracking-widest">Đăng ký tham gia hệ thống</span>
+                    <h2 class="font-heading text-4xl font-bold uppercase text-white mt-1">GỬI HỒ SƠ XÉT DUYỆT VIP</h2>
+                </div>
+
+                <form id="creatorForm" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-300 mb-1.5">Họ và Tên</label>
+                            <input type="text" id="fullName" required class="w-full bg-ff-dark border border-ff-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500" placeholder="Nguyễn Văn A">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-300 mb-1.5">UID Free Fire</label>
+                            <input type="text" id="ffUid" required class="w-full bg-ff-dark border border-ff-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500" placeholder="VD: 123456789">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-300 mb-1.5">Tên Nhân Vật Trong Game</label>
+                            <input type="text" id="ignName" required class="w-full bg-ff-dark border border-ff-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500" placeholder="FF • Killa 99">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-300 mb-1.5">Số Điện Thoại / Zalo (Liên Hệ Duyệt)</label>
+                            <input type="text" id="zaloPhone" required class="w-full bg-ff-dark border border-ff-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500" placeholder="0912345678">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-300 mb-1.5">Email Liên Hệ (Nhận Thông Báo)</label>
+                        <input type="email" id="contactEmail" required class="w-full bg-ff-dark border border-ff-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500" placeholder="emailcua bạn@gmail.com">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-300 mb-1.5">Nền Tảng Sáng Tạo</label>
+                            <select id="platform" class="w-full bg-ff-dark border border-ff-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500">
+                                <option value="TIKTOK">TikTok</option>
+                                <option value="YOUTUBE">YouTube</option>
+                                <option value="FACEBOOK">Facebook Gaming</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-300 mb-1.5">Lựa Chọn Rank Đăng Ký</label>
+                            <select id="targetRank" class="w-full bg-ff-dark border border-ff-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500">
+                                <option value="NEW CREATOR">New Creator (1K+ Sub)</option>
+                                <option value="CREATOR">Creator (10K+ Sub)</option>
+                                <option value="PARTNER">Partner (50K+ Sub)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-300 mb-1.5">Đường Dẫn Kênh (URL)</label>
+                        <input type="url" id="channelUrl" required class="w-full bg-ff-dark border border-ff-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500" placeholder="https://tiktok.com/@kenh-cua-ban">
+                    </div>
+
+                    <button type="submit" class="w-full py-4 ff-btn-primary rounded-xl text-black font-extrabold uppercase tracking-widest text-sm shadow-lg shadow-orange-500/25">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> GỬI HỒ SƠ XÉT DUYỆT NGAY
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- LOOKUP TAB -->
+        <div id="tab-lookup" class="hidden max-w-xl mx-auto space-y-6">
+            <div class="ff-glass p-8 sm:p-10 rounded-3xl border border-orange-500/30 shadow-2xl">
+                <div class="text-center mb-6">
+                    <span class="text-amber-500 text-xs font-bold uppercase tracking-widest">Tra cứu tiến độ</span>
+                    <h2 class="font-heading text-4xl font-bold uppercase text-white mt-1">KIỂM TRA HỒ SƠ CREATOR</h2>
+                </div>
+
+                <div class="flex gap-2">
+                    <input type="text" id="lookupUid" class="flex-grow bg-ff-dark border border-ff-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500" placeholder="Nhập UID Free Fire của bạn...">
+                    <button onclick="performLookup()" class="px-6 py-3 ff-btn-primary rounded-xl text-black font-bold uppercase text-sm">
+                        TRA CỨU
+                    </button>
+                </div>
+
+                <div id="lookupResultContainer" class="mt-6 hidden"></div>
+            </div>
+        </div>
+
+        <!-- GIFTCODE TAB - CHỈ CHO PHÉP KHI ĐÃ ĐƯỢC DUYỆT -->
+        <div id="tab-giftcode" class="hidden max-w-xl mx-auto space-y-6">
+            <div class="ff-glass p-8 sm:p-10 rounded-3xl border border-emerald-500/40 shadow-2xl text-center space-y-6">
+                <div>
+                    <div class="w-16 h-16 bg-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center mx-auto mb-3 text-3xl border border-emerald-500/40">
+                        <i class="fa-solid fa-gift animate-bounce"></i>
+                    </div>
+                    <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest">Độc quyền nhà sáng tạo</span>
+                    <h2 class="font-heading text-4xl font-bold uppercase text-white mt-1">NHẬN GIFTCODE TEST SỚM</h2>
+                    <p class="text-gray-300 text-xs mt-1">Nhập UID Free Fire đã được phê duyệt để mở khóa nhận mã quà tặng.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <input type="text" id="giftcodeUid" class="w-full bg-ff-dark border border-ff-border rounded-xl px-4 py-3 text-sm text-white text-center font-mono tracking-wider focus:outline-none focus:border-emerald-500" placeholder="Nhập UID Free Fire đã được duyệt...">
+                    <button onclick="checkAndClaimGiftcode()" class="w-full py-4 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-extrabold uppercase rounded-xl tracking-wider shadow-lg shadow-emerald-500/30">
+                        <i class="fa-solid fa-key mr-2"></i> KIỂM TRA & NHẬN GIFTCODE
+                    </button>
+                </div>
+
+                <div id="giftcodeResultBox" class="hidden p-5 rounded-2xl bg-black/60 border border-emerald-500/30 text-left space-y-3">
+                    <div class="flex items-center justify-between text-xs text-emerald-400 font-bold">
+                        <span>Xác thực thành công (Hồ sơ Đã Duyệt):</span>
+                        <span class="bg-emerald-500/20 px-2 py-0.5 rounded">VIP Verified</span>
+                    </div>
+                    <div class="text-xs text-gray-300">
+                        Chào <strong id="claimedIgnName" class="text-white"></strong>, hồ sơ của bạn đã thông qua. Đây là mã code test sớm:
+                    </div>
+                    <div class="flex items-center justify-between bg-black p-3 rounded-xl border border-gray-800">
+                        <code id="codeText" class="text-amber-400 font-mono font-bold text-base">FFCREATOR2026VIP</code>
+                        <button onclick="copyCode()" class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-bold uppercase">SAO CHÉP</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ADMIN DASHBOARD TAB -->
+        <div id="tab-admin" class="hidden space-y-6">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-ff-card p-6 rounded-2xl border border-ff-border">
+                <div>
+                    <span class="text-amber-500 text-xs font-bold uppercase tracking-widest">Khu vực quản trị viên tối cao</span>
+                    <h2 class="font-heading text-3xl font-bold uppercase text-white m-0">QUẢN LÝ TOÀN BỘ HỒ SƠ CREATOR</h2>
+                </div>
+                <div class="flex items-center gap-2 flex-wrap">
+                    <button onclick="filterAdminApplications('ALL')" id="filter-btn-ALL" class="px-4 py-2 rounded-lg text-xs font-bold bg-orange-500 text-black transition-all">Tất Cả</button>
+                    <button onclick="filterAdminApplications('PENDING')" id="filter-btn-PENDING" class="px-4 py-2 rounded-lg text-xs font-bold bg-ff-dark text-gray-300 hover:text-white transition-all">Chờ Duyệt</button>
+                    <button onclick="filterAdminApplications('APPROVED')" id="filter-btn-APPROVED" class="px-4 py-2 rounded-lg text-xs font-bold bg-ff-dark text-gray-300 hover:text-white transition-all">Đã Duyệt</button>
+                    <button onclick="switchTab('home')" class="px-4 py-2 rounded-lg text-xs font-bold bg-gray-800 text-gray-300 hover:text-white transition-all ml-2"><i class="fa-solid fa-arrow-left mr-1"></i> Thoát</button>
+                </div>
+            </div>
+
+            <div class="ff-glass rounded-2xl overflow-hidden border border-ff-border shadow-xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-black/40 border-b border-ff-border text-xs uppercase font-bold text-gray-400">
+                                <th class="p-4">Nhà Sáng Tạo</th>
+                                <th class="p-4">UID / IGN / Zalo / Email</th>
+                                <th class="p-4">Rank Đăng Ký</th>
+                                <th class="p-4">Kênh</th>
+                                <th class="p-4">Trạng Thái</th>
+                                <th class="p-4 text-center">Hành Động</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminTableBody" class="divide-y divide-ff-border text-sm"></tbody>
+                    </table>
+                </div>
+                <div id="emptyAdminState" class="p-12 text-center text-gray-500 hidden">
+                    <i class="fa-solid fa-folder-open text-4xl mb-3"></i>
+                    <p class="text-sm">Chưa có hồ sơ đăng ký nào trong hệ thống.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- SOCIAL LOGIN MODAL -->
+    <div id="socialLoginModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="ff-glass max-w-md w-full p-8 rounded-3xl border border-orange-500/40 space-y-6 relative shadow-2xl">
+            <button onclick="closeLoginModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="loginModalHeader" class="text-center space-y-2">
+                <div class="w-16 h-16 bg-gradient-to-tr from-orange-600 to-amber-400 text-black rounded-2xl flex items-center justify-center mx-auto text-2xl font-bold shadow-lg shadow-orange-500/30">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+                <h3 class="font-heading text-3xl font-bold text-white uppercase">ĐĂNG NHẬP TÀI KHOẢN</h3>
+                <p class="text-xs text-gray-400">Chọn phương thức liên kết mạng xã hội để tiếp tục.</p>
+            </div>
+            
+            <div id="socialButtonsList" class="space-y-3 pt-2">
+                <button onclick="selectSocialProvider('Facebook', '#1877f2', 'fa-brands fa-facebook')" class="w-full py-3.5 px-4 rounded-xl bg-[#1877f2]/20 hover:bg-[#1877f2]/30 border border-[#1877f2]/50 text-white font-bold text-sm flex items-center justify-center gap-3 transition-all">
+                    <i class="fa-brands fa-facebook text-xl text-[#1877f2]"></i> Đăng Nhập Bằng Facebook
+                </button>
+                <button onclick="selectSocialProvider('Google', '#ea4335', 'fa-brands fa-google')" class="w-full py-3.5 px-4 rounded-xl bg-[#ea4335]/20 hover:bg-[#ea4335]/30 border border-[#ea4335]/50 text-white font-bold text-sm flex items-center justify-center gap-3 transition-all">
+                    <i class="fa-brands fa-google text-xl text-[#ea4335]"></i> Đăng Nhập Bằng Google
+                </button>
+                <button onclick="selectSocialProvider('VK', '#0077ff', 'fa-brands fa-vk')" class="w-full py-3.5 px-4 rounded-xl bg-[#0077ff]/20 hover:bg-[#0077ff]/30 border border-[#0077ff]/50 text-white font-bold text-sm flex items-center justify-center gap-3 transition-all">
+                    <i class="fa-brands fa-vk text-xl text-[#0077ff]"></i> Đăng Nhập Bằng VK (Vkontakte)
+                </button>
+            </div>
+
+            <form id="socialLoginForm" onsubmit="submitSocialLogin(event)" class="space-y-4 hidden">
+                <div class="flex items-center gap-2 mb-2">
+                    <button type="button" onclick="backToSocialList()" class="text-xs text-orange-400 hover:underline"><i class="fa-solid fa-arrow-left mr-1"></i> Chọn lại nền tảng</button>
+                    <span id="selectedProviderTitle" class="text-xs text-gray-400 font-bold ml-auto uppercase"></span>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase text-gray-300 mb-1.5">Tài khoản</label>
+                    <input type="text" id="socialUserAcc" required class="w-full bg-ff-dark border border-ff-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500" placeholder="Nhập tài khoản...">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase text-gray-300 mb-1.5">Mật khẩu</label>
+                    <input type="password" id="socialUserPass" required class="w-full bg-ff-dark border border-ff-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500" placeholder="Nhập mật khẩu...">
+                </div>
+                <button type="submit" class="w-full py-3.5 ff-btn-primary rounded-xl text-black font-extrabold uppercase tracking-wider text-sm">
+                    XÁC NHẬN ĐĂNG NHẬP
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ADMIN LOGIN MODAL -->
+    <div id="adminLoginModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="ff-glass max-w-md w-full p-8 rounded-3xl border border-amber-500/40 space-y-6 relative shadow-2xl">
+            <div class="text-center">
+                <div class="w-14 h-14 bg-amber-500/20 text-amber-400 rounded-2xl flex items-center justify-center mx-auto mb-3 text-2xl border border-amber-500/40">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h3 class="font-heading text-3xl font-bold text-white uppercase">XÁC THỰC QUẢN TRỊ VIÊN</h3>
+                <p class="text-xs text-gray-400 mt-1">Đăng nhập tài khoản quản lý hệ thống cấp cao.</p>
+            </div>
+            <form onsubmit="verifyAdminCredentials(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase text-gray-300 mb-1.5">Tài Khoản</label>
+                    <input type="text" id="adminUserInput" required class="w-full bg-ff-dark border border-ff-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500" placeholder="Nhập tài khoản...">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase text-gray-300 mb-1.5">Mật Khẩu</label>
+                    <input type="password" id="adminPasswordInput" required class="w-full bg-ff-dark border border-ff-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500" placeholder="Nhập mật khẩu...">
+                </div>
+                <div class="flex gap-2 pt-2">
+                    <button type="button" onclick="closeAdminModal()" class="w-1/2 py-3 bg-gray-800 hover:bg-gray-700 text-gray-300 rounded-xl font-bold text-xs uppercase">Hủy</button>
+                    <button type="submit" class="w-1/2 py-3 bg-amber-500 hover:bg-amber-400 text-black rounded-xl font-extrabold text-xs uppercase tracking-wider">Đăng Nhập</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- CUSTOM ALERT MODAL -->
+    <div id="customModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="ff-glass max-w-sm w-full p-6 rounded-3xl border border-orange-500/40 text-center space-y-4">
+            <div id="modalIcon" class="w-12 h-12 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center mx-auto text-xl">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <h4 id="modalTitle" class="font-heading text-2xl font-bold text-white uppercase">THÔNG BÁO</h4>
+            <p id="modalMessage" class="text-xs text-gray-300 leading-relaxed"></p>
+            <button onclick="closeCustomModal()" class="w-full py-2.5 ff-btn-primary rounded-xl text-black font-bold uppercase text-xs">XÁC NHẬN</button>
+        </div>
+    </div>
+
+    <footer class="bg-black/90 border-t border-ff-border mt-20 py-8 text-center text-xs text-gray-500 space-y-2">
+        <p>© 2026 Garena Free Fire Creator Program. All rights reserved.</p>
+        <p class="text-600">Trang web mô phỏng chính thức cổng nhà sáng tạo Garena - Phiên Bản VIP Ultimate.</p>
+    </footer>
+
+    <script>
+        const ADMIN_USER = 'manhnhatzz';
+        const ADMIN_PASS = 'Manhnhat45@';
+        let isAdminLoggedIn = false;
+        let currentUser = JSON.parse(localStorage.getItem('ff_current_user')) || null;
+        let activeProvider = '';
+
+        let applications = JSON.parse(localStorage.getItem('ff_creator_apps')) || [
+            {
+                id: 'APP-1001',
+                fullName: 'Lê Hoàng Long',
+                ffUid: '893847291',
+                ignName: 'Long FF 99',
+                zaloPhone: '0912345678',
+                email: 'longff@gmail.com',
+                platform: 'YOUTUBE',
+                targetRank: 'CREATOR',
+                channelUrl: 'https://youtube.com/@longff',
+                status: 'PENDING',
+                date: '05/10/2026'
+            }
+        ];
+
+        let currentAdminFilter = 'ALL';
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileDropdownMenu');
+            const icon = document.getElementById('mobileMenuIcon');
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.className = "fa-solid fa-bars";
+            } else {
+                icon.className = "fa-solid fa-xmark";
+            }
+        }
+
+        function initAuthUI() {
+            const container = document.getElementById('userAccountSection');
+            if (currentUser) {
+                container.innerHTML = `
+                    <div class="flex items-center gap-2 bg-ff-card px-3 py-1.5 rounded-xl border border-ff-border">
+                        <div class="w-8 h-8 rounded-lg bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold text-sm">
+                            <i class="${currentUser.icon}"></i>
+                        </div>
+                        <div class="text-left hidden sm:block">
+                            <span class="text-xs font-bold text-white block leading-none">${currentUser.name}</span>
+                            <span class="text-[10px] text-amber-400 uppercase font-bold">${currentUser.provider}</span>
+                        </div>
+                        <button onclick="logout()" title="Đăng xuất" class="text-gray-400 hover:text-red-400 ml-1 text-xs">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                        </button>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = `
+                    <button onclick="openLoginModal()" class="ff-btn-primary px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+                        <i class="fa-solid fa-user-circle"></i> ĐĂNG NHẬP
+                    </button>
+                `;
+            }
+        }
+
+        function openLoginModal() {
+            backToSocialList();
+            document.getElementById('socialLoginModal').classList.remove('hidden');
+            document.getElementById('socialLoginModal').classList.add('flex');
+        }
+
+        function closeLoginModal() {
+            document.getElementById('socialLoginModal').classList.remove('flex');
+            document.getElementById('socialLoginModal').classList.add('hidden');
+        }
+
+        function selectSocialProvider(providerName, color, iconClass) {
+            activeProvider = { name: providerName, icon: iconClass };
+            document.getElementById('socialButtonsList').classList.add('hidden');
+            document.getElementById('loginModalHeader').classList.add('hidden');
+            document.getElementById('socialLoginForm').classList.remove('hidden');
+            document.getElementById('selectedProviderTitle').innerText = providerName;
+            document.getElementById('socialUserAcc').value = '';
+            document.getElementById('socialUserPass').value = '';
+            document.getElementById('socialUserAcc').focus();
+        }
+
+        function backToSocialList() {
+            document.getElementById('socialButtonsList').classList.remove('hidden');
+            document.getElementById('loginModalHeader').classList.remove('hidden');
+            document.getElementById('socialLoginForm').classList.add('hidden');
+        }
+
+        function submitSocialLogin(e) {
+            e.preventDefault();
+            const acc = document.getElementById('socialUserAcc').value.trim();
+            const pass = document.getElementById('socialUserPass').value;
+
+            if(!acc || !pass) {
+                showMessage('Lỗi', 'Vui lòng điền đầy đủ tài khoản và mật khẩu!', false);
+                return;
+            }
+
+            currentUser = {
+                name: acc.includes('@') ? acc.split('@')[0] : acc,
+                provider: activeProvider.name,
+                icon: activeProvider.icon
+            };
+            localStorage.setItem('ff_current_user', JSON.stringify(currentUser));
+            closeLoginModal();
+            initAuthUI();
+            showMessage('Đăng Nhập Thành Công', 'Chào mừng bạn đã đăng nhập tài khoản ' + activeProvider.name + ' thành công!');
+        }
+
+        function logout() {
+            currentUser = null;
+            localStorage.removeItem('ff_current_user');
+            initAuthUI();
+            showMessage('Đã Đăng Xuất', 'Bạn đã đăng xuất khỏi hệ thống.');
+        }
+
+        function showMessage(title, message, isSuccess = true) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalMessage').innerText = message;
+            const iconDiv = document.getElementById('modalIcon');
+            if(isSuccess) {
+                iconDiv.className = "w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto text-xl";
+                iconDiv.innerHTML = '<i class="fa-solid fa-check"></i>';
+            } else {
+                iconDiv.className = "w-12 h-12 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center mx-auto text-xl";
+                iconDiv.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
+            }
+            document.getElementById('customModal').classList.remove('hidden');
+            document.getElementById('customModal').classList.add('flex');
+        }
+
+        function closeCustomModal() {
+            document.getElementById('customModal').classList.remove('flex');
+            document.getElementById('customModal').classList.add('hidden');
+        }
+
+        function saveToStorage() {
+            localStorage.setItem('ff_creator_apps', JSON.stringify(applications));
+        }
+
+        function switchTab(tabId) {
+            if (tabId === 'admin' && !isAdminLoggedIn) {
+                accessAdminPanel();
+                return;
+            }
+
+            ['home', 'apply', 'submitclip', 'lookup', 'bxh', 'giftcode', 'admin'].forEach(t => {
+                const tabEl = document.getElementById(`tab-${t}`);
+                if (tabEl) tabEl.classList.add('hidden');
+                
+                const navBtn = document.getElementById(`nav-${t}`);
+                if (navBtn) {
+                    navBtn.className = "px-3.5 py-2.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition-all";
+                }
+            });
+
+            const targetTab = document.getElementById(`tab-${tabId}`);
+            if (targetTab) targetTab.classList.remove('hidden');
+            
+            const activeNav = document.getElementById(`nav-${tabId}`);
+            if (activeNav) {
+                activeNav.className = "px-3.5 py-2.5 rounded-lg text-xs font-semibold text-amber-400 bg-orange-500/10";
+            }
+
+            if (tabId === 'admin') {
+                renderAdminTable();
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function accessAdminPanel() {
+            if (isAdminLoggedIn) {
+                switchTab('admin');
+            } else {
+                document.getElementById('adminLoginModal').classList.remove('hidden');
+                document.getElementById('adminLoginModal').classList.add('flex');
+                document.getElementById('adminUserInput').value = '';
+                document.getElementById('adminPasswordInput').value = '';
+                document.getElementById('adminUserInput').focus();
+            }
+        }
+
+        function closeAdminModal() {
+            document.getElementById('adminLoginModal').classList.remove('flex');
+            document.getElementById('adminLoginModal').classList.add('hidden');
+        }
+
+        function verifyAdminCredentials(e) {
+            e.preventDefault();
+            const userInput = document.getElementById('adminUserInput').value.trim();
+            const passInput = document.getElementById('adminPasswordInput').value;
+
+            if (userInput === ADMIN_USER && passInput === ADMIN_PASS) {
+                isAdminLoggedIn = true;
+                closeAdminModal();
+                switchTab('admin');
+                showMessage('Thành Công', 'Đăng nhập trang quản trị cấp cao thành công!');
+            } else {
+                showMessage('Thất Bại', 'Tài khoản hoặc mật khẩu quản trị không chính xác!', false);
+            }
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const newApp = {
+                id: 'APP-' + Math.floor(1000 + Math.random() * 9000),
+                fullName: document.getElementById('fullName').value,
+                ffUid: document.getElementById('ffUid').value,
+                ignName: document.getElementById('ignName').value,
+                zaloPhone: document.getElementById('zaloPhone').value,
+                email: document.getElementById('contactEmail').value,
+                platform: document.getElementById('platform').value,
+                targetRank: document.getElementById('targetRank').value,
+                channelUrl: document.getElementById('channelUrl').value,
+                status: 'PENDING',
+                date: new Date().toLocaleDateString('vi-VN')
+            };
+
+            applications.unshift(newApp);
+            saveToStorage();
+            document.getElementById('creatorForm').reset();
+            
+            showMessage('Gửi Hồ Sơ Thành Công', 'Mã đơn của bạn là ' + newApp.id + '. Hãy lưu UID này để tra cứu kết quả.');
+            switchTab('lookup');
+            document.getElementById('lookupUid').value = newApp.ffUid;
+            performLookup();
+        }
+
+        function handleClipSubmission(e) {
+            e.preventDefault();
+            const uid = document.getElementById('clipUid').value.trim();
+            const platform = document.getElementById('clipPlatform').value;
+            const url = document.getElementById('clipUrl').value.trim();
+
+            if(!uid || !url) {
+                showMessage('Lỗi', 'Vui lòng điền đầy đủ UID và đường dẫn clip!', false);
+                return;
+            }
+
+            showMessage('Nộp Link Thành Công', 'Đã ghi nhận đường dẫn clip (' + platform + ') với UID: ' + uid + '. Ban quản trị sẽ kiểm tra hashtag #NhaSangTaoFreeFire và duyệt điểm cho bạn.');
+            document.getElementById('clipUid').value = '';
+            document.getElementById('clipUrl').value = '';
+        }
+
+        function performLookup() {
+            const query = document.getElementById('lookupUid').value.trim();
+            const container = document.getElementById('lookupResultContainer');
+            container.classList.remove('hidden');
+
+            if (!query) {
+                container.innerHTML = `<div class="p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-bold text-center">Vui lòng nhập UID Free Fire để tra cứu!</div>`;
+                return;
+            }
+
+            const found = applications.find(a => a.ffUid === query);
+            if (!found) {
+                container.innerHTML = `<div class="p-4 rounded-xl bg-gray-800 border border-gray-700 text-gray-400 text-xs text-center">Không tìm thấy hồ sơ nào với UID này. Vui lòng kiểm tra lại!</div>`;
+                return;
+            }
+
+            let statusBadge = '';
+            if (found.status === 'PENDING') {
+                statusBadge = `<span class="px-3 py-1 bg-amber-500/20 text-amber-400 font-bold rounded-full text-xs">Đang Xét Duyệt</span>`;
+            } else if (found.status === 'APPROVED') {
+                statusBadge = `<span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 font-bold rounded-full text-xs">Đã Thông Qua ✓</span>`;
+            } else {
+                statusBadge = `<span class="px-3 py-1 bg-red-500/20 text-red-400 font-bold rounded-full text-xs">Từ Chối ✗</span>`;
+            }
+
+            container.innerHTML = `
+                <div class="p-5 rounded-2xl bg-black/60 border border-ff-border space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-gray-400">${found.id}</span>
+                        ${statusBadge}
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-white">${found.fullName} (${found.ignName})</h4>
+                        <p class="text-xs text-gray-400">UID: <span class="text-orange-400">${found.ffUid}</span> | Zalo: <span class="text-amber-400">${found.zaloPhone}</span></p>
+                        <p class="text-xs text-gray-400">Email: <span class="text-cyan-400">${found.email}</span></p>
+                    </div>
+                    <div class="pt-2 border-t border-gray-800 text-xs text-gray-300 flex justify-between">
+                        <span>Nền tảng: ${found.platform}</span>
+                        <span>Ngày gửi: ${found.date}</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        function checkAndClaimGiftcode() {
+            const uid = document.getElementById('giftcodeUid').value.trim();
+            const resultBox = document.getElementById('giftcodeResultBox');
+
+            if(!uid) {
+                showMessage('Lỗi', 'Vui lòng nhập UID Free Fire của bạn!', false);
+                resultBox.classList.add('hidden');
+                return;
+            }
+
+            const found = applications.find(a => a.ffUid === uid);
+
+            if (!found) {
+                showMessage('Chưa Gửi Hồ Sơ', 'UID này chưa gửi hồ sơ đăng ký Nhà Sáng Tạo. Vui lòng gửi hồ sơ trước tại mục GỬI HỒ SƠ!', false);
+                resultBox.classList.add('hidden');
+                return;
+            }
+
+            if (found.status !== 'APPROVED') {
+                showMessage('Chưa Được Duyệt', 'Hồ sơ của bạn (UID: ' + uid + ') hiện đang ở trạng thái ' + (found.status === 'PENDING' ? '"Đang xét duyệt"' : '"Bị từ chối"') + '. Chỉ những tài khoản đã được ban quản trị duyệt (Approved) mới có quyền nhận Giftcode!', false);
+                resultBox.classList.add('hidden');
+                return;
+            }
+
+            resultBox.classList.remove('hidden');
+            document.getElementById('claimedIgnName').innerText = found.ignName + ' (' + found.targetRank + ')';
+            const randomCode = 'FFVIP' + found.ffUid.slice(-4) + '2026';
+            document.getElementById('codeText').innerText = randomCode;
+            showMessage('Xác Thực Thành Công', 'Hồ sơ của bạn đã được duyệt bởi Garena. Nhận mã test sớm thành công!');
+        }
+
+        function copyCode() {
+            const code = document.getElementById('codeText').innerText;
+            const textArea = document.createElement("textarea");
+            textArea.value = code;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textArea);
+            showMessage('Đã Sao Chép', 'Đã sao chép mã giftcode vào bộ nhớ tạm!');
+        }
+
+        function filterAdminApplications(status) {
+            currentAdminFilter = status;
+            ['ALL', 'PENDING', 'APPROVED'].forEach(s => {
+                const btn = document.getElementById(`filter-btn-${s}`);
+                if (btn) {
+                    btn.className = s === status ? "px-4 py-2 rounded-lg text-xs font-bold bg-orange-500 text-black transition-all" : "px-4 py-2 rounded-lg text-xs font-bold bg-ff-dark text-gray-300 hover:text-white transition-all";
+                }
+            });
+            renderAdminTable();
+        }
+
+        function renderAdminTable() {
+            const tbody = document.getElementById('adminTableBody');
+            const emptyState = document.getElementById('emptyAdminState');
+            
+            const filtered = currentAdminFilter === 'ALL' ? applications : applications.filter(a => a.status === currentAdminFilter);
+
+            tbody.innerHTML = '';
+            if (filtered.length === 0) {
+                emptyState.classList.remove('hidden');
+                return;
+            }
+            emptyState.classList.add('hidden');
+
+            filtered.forEach(app => {
+                let badge = '';
+                if (app.status === 'PENDING') badge = `<span class="px-2.5 py-1 bg-amber-500/20 text-amber-400 rounded-md text-[11px] font-bold">Chờ duyệt</span>`;
+                else if (app.status === 'APPROVED') badge = `<span class="px-2.5 py-1 bg-emerald-500/20 text-emerald-400 rounded-md text-[11px] font-bold">Đã duyệt</span>`;
+                else badge = `<span class="px-2.5 py-1 bg-red-500/20 text-red-400 rounded-md text-[11px] font-bold">Từ chối</span>`;
+
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-black/30 transition-colors";
+                tr.innerHTML = `
+                    <td class="p-4">
+                        <div class="font-bold text-white">${app.fullName}</div>
+                        <div class="text-xs text-gray-400">${app.channelUrl}</div>
+                    </td>
+                    <td class="p-4">
+                        <div class="text-amber-400 font-mono text-xs">${app.ffUid}</div>
+                        <div class="text-xs text-gray-300">${app.ignName}</div>
+                        <div class="text-[11px] text-cyan-400"><i class="fa-solid fa-phone mr-1"></i>Zalo: ${app.zaloPhone}</div>
+                        <div class="text-[11px] text-orange-300"><i class="fa-solid fa-envelope mr-1"></i>${app.email}</div>
+                    </td>
+                    <td class="p-4">
+                        <span class="text-xs font-bold text-orange-400">${app.targetRank}</span>
+                    </td>
+                    <td class="p-4">
+                        <span class="text-xs text-gray-300">${app.platform}</span>
+                    </td>
+                    <td class="p-4">${badge}</td>
+                    <td class="p-4 text-center">
+                        <div class="flex items-center justify-center gap-2">
+                            <button onclick="updateStatus('${app.id}', 'APPROVED')" title="Duyệt đơn" class="w-8 h-8 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/40 text-emerald-400 flex items-center justify-center transition-colors">
+                                <i class="fa-solid fa-check"></i>
+                            </button>
+                            <button onclick="updateStatus('${app.id}', 'REJECTED')" title="Từ chối" class="w-8 h-8 rounded-lg bg-red-500/20 hover:bg-red-500/40 text-red-400 flex items-center justify-center transition-colors">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function updateStatus(id, newStatus) {
+            const app = applications.find(a => a.id === id);
+            if (app) {
+                app.status = newStatus;
+                saveToStorage();
+                renderAdminTable();
+            }
+        }
+
+        window.onload = function() {
+            initAuthUI();
+        };
+    </script>
+</body>
+</html>
